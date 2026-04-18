@@ -2,7 +2,7 @@
 %  LaTeX support: latex@mdpi.com
 %  In case you need support, please contact latex@mdpi.com
 %=================================================================
-\documentclass[agriengineering,article,submit,pdftex,moreauthors]{Definitions/mdpi}
+\documentclass[agronomy,article,submit,pdftex,moreauthors]{Definitions/mdpi}
 
 % Additional packages
 \usepackage{siunitx}
@@ -70,19 +70,18 @@ Karina Acosta-Caipa $^{4}$\orcidF{},
 Heler Samir P\'{e}rez-Cubas $^{5}$\orcidG{},
 Eusebio Ingol-Blanco $^{6}$\orcidH{},
 Lia Ramos-Fern\'{a}ndez $^{2,}$*\orcidI{} and
-Edwin Pino-Vargas $^{7,}$*\orcidJ{}}
+Edwin Pino-Vargas $^{1,}$*\orcidJ{}}
 
 \AuthorNames{Javier Quille-Mamani, Jos\'{e} Huanuque\~{n}o-Murillo, David Quispe-Tito, German Huayna-Felipe, Jorge Espinoza-Molina, Karina Acosta-Caipa, Heler Samir P\'{e}rez-Cubas, Eusebio Ingol-Blanco, Lia Ramos-Fern\'{a}ndez, Edwin Pino-Vargas}
 \AuthorCitation{Quille-Mamani, J.; Huanuque\~{n}o-Murillo, J.; Quispe-Tito, D.; Huayna-Felipe, G.; Espinoza-Molina, J.; Acosta-Caipa, K.; P\'{e}rez-Cubas, H.S.; Ingol-Blanco, E.; Ramos-Fern\'{a}ndez, L.; Pino-Vargas, E.}
 
 \address{%
-$^{1}$ \quad Geo-Environmental Cartography and Remote Sensing Group (CGAT), Universitat Polit\`{e}cnica de Val\`{e}ncia, Cam\'{i} de Vera s/n, 46022 Valencia, Spain\\
+$^{1}$ \quad Department of Civil Engineering, Jorge Basadre Grohmann National University, Tacna 23000, Peru\\
 $^{2}$ \quad Department of Water Resources, National Agrarian University La Molina, Lima 15024, Peru\\
 $^{3}$ \quad Master's Program in Water Resources, Jorge Basadre Grohmann National University, Tacna 23000, Peru\\
 $^{4}$ \quad Department of Architecture, Jorge Basadre Grohmann National University, Tacna 23000, Peru\\
 $^{5}$ \quad Department of Hydraulic Engineering and Environment, Universitat Polit\`{e}cnica de Val\`{e}ncia, Cam\'{i} de Vera s/n, 46022 Valencia, Spain\\
-$^{6}$ \quad Department of Civil Engineering, New Mexico State University, Las Cruces, NM 88003, USA\\
-$^{7}$ \quad Department of Civil Engineering, Jorge Basadre Grohmann National University, Tacna 23000, Peru}
+$^{6}$ \quad Department of Civil Engineering, New Mexico State University, Las Cruces, NM 88003, USA}
 
 \corres{Correspondence: liarf@lamolina.edu.pe (L.R.-F.); epinov@unjbg.edu.pe (E.P.-V.)}
 
@@ -421,13 +420,18 @@ Table~S7: Sensitivity of the primary log-OLS model to the offset constant $c$ in
 Table~S8: Annual climate summary of the eight-year calibration sample.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\authorcontributions{Conceptualization, J.Q.-M., L.R.-F.\ and E.P.-V.; methodology, J.H.-M.\ and J.Q.-M.;
-software, J.H.-M.; validation, J.H.-M., D.Q.-T.\ and J.Q.-M.; formal analysis, J.H.-M.;
-investigation, J.H.-M., D.Q.-T.\ and J.E.-M.; resources, G.H.-F., E.P.-V.\ and E.I.-B.;
-data curation, J.H.-M.\ and K.A.-C.; writing---original draft preparation, J.H.-M.;
-writing---review and editing, J.Q.-M., L.R.-F., D.Q.-T., J.E.-M.\ and E.I.-B.; visualization, J.H.-M.;
-supervision, E.P.-V.\ and L.R.-F.; project administration, E.P.-V.\ and L.R.-F.; funding
-acquisition, E.P.-V. All authors have read and agreed to the published version of the manuscript.}
+\authorcontributions{Conceptualization, J.Q.-M., J.H.-M., L.R.-F.\ and E.P.-V.;
+methodology, J.Q.-M.\ and J.H.-M.; software, J.Q.-M.;
+validation, J.Q.-M., J.H.-M.\ and D.Q.-T.; formal analysis, J.Q.-M.;
+investigation, D.Q.-T., G.H.-F.\ and J.E.-M.;
+resources, G.H.-F., J.E.-M., K.A.-C., H.S.P.-C., E.I.-B.\ and E.P.-V.;
+data curation, K.A.-C.;
+writing---original draft preparation, J.Q.-M.;
+writing---review and editing, J.Q.-M., J.H.-M., D.Q.-T., G.H.-F., J.E.-M., K.A.-C., H.S.P.-C., E.I.-B.\ and L.R.-F.;
+visualization, J.Q.-M.;
+supervision, L.R.-F.\ and E.P.-V.;
+project administration, L.R.-F.\ and E.P.-V.;
+funding acquisition, E.P.-V. All authors have read and agreed to the published version of the manuscript.}
 
 \funding{This research was funded by the project ``Use of Remote Sensing to Improve Irrigation
 Management in Olive (\textit{Olea europaea} L.) Orchards and to Address Climate Change in Arid
@@ -443,8 +447,8 @@ CMIP6 projection tables), the daily meteorological record from the on-site autom
 station (\texttt{meteo\_daily\_2015\_2025.csv}; $T_{\min}$, $T_{\max}$, $T_{\text{mean}}$,
 precipitation, solar radiation, relative humidity and FAO-56 reference evapotranspiration for
 1~January~2015--2~December~2025), all figures, and the full Python pipeline used to produce
-them are archived at Zenodo (\url{https://doi.org/10.5281/zenodo.19582808}) and mirrored on
-GitHub (\url{https://github.com/JLHM1998/chill-window-enso-olive-yield-tacna}). The raw
+them are archived at Zenodo (\url{https://doi.org/10.5281/zenodo.19640135}) and mirrored on
+GitHub (\url{https://github.com/JLHM1998/winter-chill-olive-yield-tacna}). The raw
 Sentinel-2 Level~2A scenes are publicly available through the Copernicus Open Access Hub
 (\url{https://dataspace.copernicus.eu/}). The NOAA PSL Oceanic Ni\~{n}o Index is publicly
 available at \url{https://psl.noaa.gov/data/correlation/oni.data}. CMIP6 ensemble warming

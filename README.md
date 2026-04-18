@@ -9,7 +9,7 @@ This repository contains the code, intermediate data, figures and LaTeX manuscri
 > Espinoza-Molina J., Acosta-Caipa K., Pérez-Cubas H.S., Ingol-Blanco E.,
 > Ramos-Fernández L., Pino-Vargas E. (2026). *Winter-Chill Attribution and CMIP6
 > Projections of ENSO-Driven Olive Yield Collapse on the Hyper-Arid Peruvian Coast.*
-> **AgriEngineering** (MDPI).
+> **Agronomy** (MDPI).
 
 ## Key findings reproduced by this archive
 
@@ -85,7 +85,7 @@ CC-BY-4.0. See `LICENSE`.
 
 ## Citation
 
-If you use this archive, please cite the AgriEngineering paper above and this
+If you use this archive, please cite the Agronomy paper above and this
 archive via its Zenodo DOI: [10.5281/zenodo.19640135](https://doi.org/10.5281/zenodo.19640135).
 
 BibTeX entry:

@@ -1,12 +1,12 @@
 cff-version: 1.2.0
-message: "If you use this archive, please cite both the AgriEngineering paper and the Zenodo archive."
+message: "If you use this archive, please cite both the Agronomy paper and the Zenodo archive."
 title: "Winter-Chill Attribution and CMIP6 Projections of ENSO-Driven Olive Yield Collapse on the Hyper-Arid Peruvian Coast — Reproducibility Archive"
 type: software
 authors:
   - family-names: Quille-Mamani
     given-names: Javier
     orcid: "https://orcid.org/0000-0002-5283-7211"
-    affiliation: "Universitat Politècnica de València, Spain"
+    affiliation: "Jorge Basadre Grohmann National University, Tacna, Peru"
   - family-names: Huanuqueño-Murillo
     given-names: José
     orcid: "https://orcid.org/0009-0003-8511-4524"
@@ -62,7 +62,7 @@ keywords:
 preferred-citation:
   type: article
   title: "Winter-Chill Attribution and CMIP6 Projections of ENSO-Driven Olive Yield Collapse on the Hyper-Arid Peruvian Coast"
-  journal: "AgriEngineering"
+  journal: "Agronomy"
   year: 2026
   authors:
     - family-names: Quille-Mamani
