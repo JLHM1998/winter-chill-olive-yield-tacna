@@ -1,5 +1,8 @@
 # Winter-Chill Attribution and CMIP6 Projections of ENSO-Driven Olive Yield Collapse on the Hyper-Arid Peruvian Coast — Reproducibility Archive
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19640135.svg)](https://doi.org/10.5281/zenodo.19640135)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 This repository contains the code, intermediate data, figures and LaTeX manuscript source supporting:
 
 > Quille-Mamani J., Huanuqueño-Murillo J., Quispe-Tito D., Huayna-Felipe G.,
@@ -83,4 +86,22 @@ CC-BY-4.0. See `LICENSE`.
 ## Citation
 
 If you use this archive, please cite the AgriEngineering paper above and this
-archive via its Zenodo DOI (to be minted on release).
+archive via its Zenodo DOI: [10.5281/zenodo.19640135](https://doi.org/10.5281/zenodo.19640135).
+
+BibTeX entry:
+
+```bibtex
+@misc{quillemamani2026zenodo,
+  author    = {Quille-Mamani, J. and Huanuqueño-Murillo, J. and Quispe-Tito, D. and
+               Huayna-Felipe, G. and Espinoza-Molina, J. and Acosta-Caipa, K. and
+               Pérez-Cubas, H.S. and Ingol-Blanco, E. and Ramos-Fernández, L. and
+               Pino-Vargas, E.},
+  title     = {Winter-Chill Attribution and {CMIP6} Projections of {ENSO}-Driven Olive Yield
+               Collapse on the Hyper-Arid {Peruvian} Coast --- Reproducibility Archive},
+  year      = {2026},
+  publisher = {Zenodo},
+  version   = {v1.0.0},
+  doi       = {10.5281/zenodo.19640135},
+  url       = {https://doi.org/10.5281/zenodo.19640135}
+}
+```

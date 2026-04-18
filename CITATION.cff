@@ -46,6 +46,8 @@ authors:
 version: "1.0.0"
 date-released: "2026-04-18"
 license: MIT
+doi: "10.5281/zenodo.19640135"
+url: "https://doi.org/10.5281/zenodo.19640135"
 repository-code: "https://github.com/JLHM1998/winter-chill-olive-yield-tacna"
 keywords:
   - Olea europaea
