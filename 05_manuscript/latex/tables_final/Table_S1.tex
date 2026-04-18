@@ -1,0 +1,55 @@
+% Table S1 — Robustness summary across alternative model specifications and LOYO variants
+% Values taken directly from robustness_summary.csv (primary model, 07_final_primary_log.py;
+% alt specs, 06_robustness_and_loyo_variants.py), oni_robustness.txt and alternance_sensitivity.txt.
+\begin{table}[H]
+\caption{Robustness summary of the primary attribution model across alternative
+predictor pairs and cross-validation strategies. Metrics on the raw t~ha$^{-1}$
+scale except \textit{loyo\_log} rows (log-space). Variants: \textit{in\_sample}
+= full-calibration fit; \textit{loyo\_raw} = unbounded raw LOYO; \textit{loyo\_clipped}
+= raw LOYO clipped to $[0,\,1.1\cdot y_{\max}]$; \textit{loyo\_log} = log-link LOYO;
+\textit{loyo\_interior} = LOYO restricted to interior years (excluding the 2016 and
+2024 warm-tail folds).\label{tab:robust_full}}
+\centering
+\footnotesize
+\begin{tabular}{llccccc}
+\toprule
+\textbf{Variant} & \textbf{Stage} & \textbf{$n$} & \textbf{$R^{2}$} & \textbf{RMSE} & \textbf{MAE} & \textbf{Bias} \\
+\midrule
+\multicolumn{7}{l}{\textit{Primary: $T_{\text{chill}}$ + $T_{\text{CREC}}$}} \\
+ & in\_sample      & 8 & $+0.108$ & $3.41$ & $2.54$ & $-0.40$ \\
+ & loyo\_raw       & 8 & $\mathbf{-1.694}$ & $\mathbf{5.92}$ & $\mathbf{4.26}$ & $+0.31$ \\
+ & loyo\_clipped   & 8 & $-0.756$ & $4.78$ & $3.69$ & $-0.26$ \\
+ & loyo\_log       & 8 & $-0.071$ & $0.79$ & $0.65$ & $+0.08$ \\
+ & loyo\_interior  & 4 & $+0.218$ & $2.67$ & $2.38$ & $-0.96$ \\
+\midrule
+\multicolumn{7}{l}{\textit{$T_{\text{chill}}$ only}} \\
+ & in\_sample      & 8 & $+0.104$ & $3.41$ & $2.70$ & $-0.40$ \\
+ & loyo\_raw       & 8 & $-1.452$ & $5.65$ & $4.00$ & $+0.47$ \\
+ & loyo\_clipped   & 8 & $-0.290$ & $4.10$ & $3.32$ & $-0.21$ \\
+ & loyo\_log       & 8 & $+0.199$ & $0.69$ & $0.58$ & $+0.09$ \\
+ & loyo\_interior  & 5 & $+0.079$ & $2.60$ & $2.22$ & $-1.43$ \\
+\midrule
+\multicolumn{7}{l}{\textit{CP + $T_{\text{CREC}}$}} \\
+ & in\_sample      & 8 & $-0.174$ & $3.91$ & $3.68$ & $-1.17$ \\
+ & loyo\_raw       & 8 & $-15.608$ & $14.70$ & $10.11$ & $+3.87$ \\
+\midrule
+\multicolumn{7}{l}{\textit{CH$_{12}$ + $T_{\text{CREC}}$}} \\
+ & in\_sample      & 8 & $-0.175$ & $3.91$ & $3.55$ & $-1.00$ \\
+ & loyo\_raw       & 8 & $-8.648$ & $11.20$ & $8.25$ & $+2.44$ \\
+\midrule
+\multicolumn{7}{l}{\textit{$T_{\text{chill}}$ + $T_{\max,\text{FLOR}}$}} \\
+ & in\_sample      & 8 & $+0.230$ & $3.16$ & $2.55$ & $-0.35$ \\
+ & loyo\_raw       & 8 & $-1.139$ & $5.27$ & $4.12$ & $+0.24$ \\
+\midrule
+\multicolumn{7}{l}{\textit{RF (5 features)}} \\
+ & loyo\_raw       & 8 & $-0.040$ & $3.68$ & $3.23$ & $+0.41$ \\
+\midrule
+\multicolumn{7}{l}{\textit{ONI$_{\text{May--Aug},t-1}$ + $T_{\text{CREC}}$ (ENSO robustness)}} \\
+ & in\_sample      & 8 & $-0.080$ & $3.75$ & $3.19$ & --- \\
+ & loyo\_raw       & 8 & $-3.562$ & $7.70$ & $5.97$ & --- \\
+\midrule
+\multicolumn{7}{l}{\textit{$T_{\text{chill}}$ + $T_{\text{CREC}}$ + share\_ON (alternance sensitivity)}} \\
+ & in\_sample ($\beta_{T_{\text{chill}}}=-0.601$, $p=0.031$) & 8 & $+0.893$ & --- & --- & --- \\
+\bottomrule
+\end{tabular}
+\end{table}

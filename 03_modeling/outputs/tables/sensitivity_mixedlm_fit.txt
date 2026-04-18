@@ -1,0 +1,22 @@
+            Mixed Linear Model Regression Results
+=============================================================
+Model:              MixedLM  Dependent Variable:  yield_tn_ha
+No. Observations:   88       Method:              REML       
+No. Groups:         11       Scale:               7.3714     
+Min. group size:    8        Log-Likelihood:      -212.1211  
+Max. group size:    8        Converged:           Yes        
+Mean group size:    8.0                                      
+-------------------------------------------------------------
+                   Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+-------------------------------------------------------------
+Intercept           6.329    0.289 21.867 0.000  5.762  6.896
+Tmean_chill_lag1_z -2.480    0.319 -7.775 0.000 -3.105 -1.855
+Tmean_mean_CREC_z  -0.120    0.319 -0.377 0.706 -0.746  0.505
+Group Var           0.000                                    
+=============================================================
+
+
+Variance components:
+  parcel = 0.0000
+  residual = 7.3714
+  ICC = 0.000

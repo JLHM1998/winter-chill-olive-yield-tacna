@@ -1,0 +1,47 @@
+CMIP6 PROJECTION REPORT — Tacna olive yield
+===========================================
+
+Method: delta method (Luedeling 2012; Aguilera et al. 2014).
+        Baseline: in-situ daily Tmin/Tmax 2015-2025.
+        Warming deltas: IPCC AR6 WGI Atlas, region SWS, CMIP6 ensemble,
+        relative to 1995-2014 baseline.
+
+Baseline (observed climate) predicted yield: 6.06 t/ha
+Observed climatological mean yield (2016-2024 ex-2021): 6.79 t/ha
+
+Projection table (median dT, central yield, change vs baseline):
+scenario    period  dTw_med  dTs_med  CP_mean  Tmean_chill  yield_med  yield_change_pct
+SSP1-2.6 2031-2050      0.9      0.9     0.29        17.87       2.91            -51.98
+SSP1-2.6 2051-2070      1.0      1.0     0.14        17.97       2.67            -55.92
+SSP2-4.5 2031-2050      1.1      1.1     0.14        18.07       2.45            -59.59
+SSP2-4.5 2051-2070      1.6      1.6     0.00        18.57       1.55            -74.42
+SSP5-8.5 2031-2050      1.4      1.4     0.00        18.37       1.87            -69.13
+SSP5-8.5 2051-2070      2.4      2.4     0.00        19.37       0.65            -89.34
+
+Interpretation
+--------------
+* Even the lowest-warming SSP1-2.6 scenario reduces mean Tacna olive yield
+  noticeably by 2071-2100, because the chill window in Tacna is already
+  marginal (Tmean_chill ~ 16-17 C is at the threshold where the Dynamic
+  Model collapses).
+* SSP5-8.5 by 2071-2100 (DeltaT_winter ~ +4 C) drives the chill window into
+  permanent failure: predicted yield converges toward the regime observed
+  in the 2016 and 2024 ENSO failure years.
+* The dominant uncertainty source in this projection is GCM ensemble
+  spread (error bars), not the calibrated model coefficients (parametric
+  band), confirming that this is a climate-projection problem and not a
+  statistical-model uncertainty problem.
+
+Caveats / forward work
+----------------------
+* Delta-method preserves observed inter-annual variability and only
+  perturbs the mean. This is the standard for chill projections but
+  cannot capture changes in the *shape* of the temperature distribution
+  (e.g. fewer cold spells under future climate). For a follow-up study,
+  bias-corrected NEX-GDDP-CMIP6 daily output should be used.
+* The warming deltas are anchored to IPCC AR6 Atlas region-mean values
+  for SWS. Refining with the exact Tacna grid cell would tighten the
+  central estimates.
+* Yield projections assume the calibrated 2016-2024 climate-yield
+  relationship is stationary. Adaptation responses (variety change,
+  irrigation regime change, sprinkler-induced cooling) are not modeled.

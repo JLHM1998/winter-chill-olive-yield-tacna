@@ -1,0 +1,23 @@
+% Table 3 — Counterfactual attribution
+\begin{table}[H]
+\caption{Counterfactual attribution of the 2016 and 2024 yield collapses. Three scenarios per failure year restore climate predictors to the non-failure historical mean: \textit{chill} ($T_{\text{chill},t-1}$ restored), \textit{heat} ($T_{\text{CREC},t}$ restored), or \textit{both}. Predictions use the primary log-OLS of Table~\ref{tab:primary_coef}, back-transformed to t~ha$^{-1}$; 95\,\% CIs are propagated from a 5000-iteration year-block bootstrap.\label{tab:counterfactual}}
+\centering
+\small
+\begin{tabular}{cccccc}
+\toprule
+\textbf{Year} & \textbf{Scenario} & \textbf{Observed} & \textbf{Counterfactual} & \textbf{$\Delta$ recovered} & \textbf{Recovery ratio} \\
+              &                   & (t~ha$^{-1}$)     & median (95\,\% CI) (t~ha$^{-1}$) & (t~ha$^{-1}$) & (cf~/~obs) \\
+\midrule
+2016 & Chill restored      & 1.60 & 8.56 \,$[3.78,\,17.86]$ & $+6.95$ & $5.34\times$ \\
+2016 & Heat restored       & 1.60 & 1.69 \,$[0.88,\,16.38]$ & $+0.09$ & $1.05\times$ \\
+2016 & \textbf{Both}       & 1.60 & \textbf{6.98} \,$[4.51,\,12.36]$ & $+5.38$ & $4.36\times$ \\
+\midrule
+2024 & Chill restored      & 0.68 & 6.70 \,$[3.67,\,12.04]$ & $+6.01$ & $9.80\times$ \\
+2024 & Heat restored       & 0.68 & 1.26 \,$[0.56,\,18.66]$ & $+0.58$ & $1.84\times$  \\
+2024 & \textbf{Both}       & 0.68 & \textbf{6.98} \,$[4.51,\,12.36]$ & $+6.30$ & $10.21\times$ \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\footnotesize\noindent\textit{Note:} The ``Both restored'' counterfactual yields the same value (6.98~t~ha$^{-1}$) for any failure year by construction, because both predictors are set to the non-failure climatological mean and the model is therefore evaluated at a single point.
+\end{table}

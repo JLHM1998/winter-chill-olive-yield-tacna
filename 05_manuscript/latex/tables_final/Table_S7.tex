@@ -1,0 +1,24 @@
+% Table S7 — Sensitivity to the offset constant c in log(y+c)
+% Values taken verbatim from sensitivity_offset.csv (script 07b_sensitivity_leave_out.py)
+\begin{table}[H]
+\caption{Sensitivity of the primary log-OLS model
+$\log(y+c)\sim T_{\text{chill},t-1}+T_{\text{CREC},t}$ to the offset
+constant $c$, using the full eight-year sample. The chill slope varies
+monotonically with $c$ (from $-0.961$ at $c=0.1$ to $-0.697$ at $c=1.0$)
+but remains significant throughout ($p\leq 0.035$); sign and significance
+of the chill effect are preserved across the practical range of
+offsets.\label{tab:sens_offset}}
+\centering
+\footnotesize
+\begin{tabular}{cccccccc}
+\toprule
+\textbf{$c$} & \textbf{$n$} & \textbf{$\beta_{T_{\text{chill}}}$ (SE)} & \textbf{$p_{\text{chill}}$} & \textbf{$\beta_{T_{\text{CREC}}}$} & \textbf{$R^{2}_{\log}$} & \textbf{$R^{2}_{\text{raw}}$} & \textbf{RMSE$_{\text{raw}}$} \\
+\midrule
+$0.10$ & 8 & $-0.961\,(0.306)$ & $0.0255$ & $+0.118$ & $0.671$ & $0.011$ & $3.59$ \\
+$0.25$ & 8 & $-0.899\,(0.291)$ & $0.0272$ & $+0.105$ & $0.663$ & $0.053$ & $3.51$ \\
+$0.50$ & 8 & $-0.816\,(0.272)$ & $0.0299$ & $+0.089$ & $0.653$ & $0.108$ & $3.41$ \\
+$0.75$ & 8 & $-0.751\,(0.256)$ & $0.0324$ & $+0.077$ & $0.643$ & $0.149$ & $3.33$ \\
+$1.00$ & 8 & $-0.697\,(0.242)$ & $0.0347$ & $+0.067$ & $0.635$ & $0.181$ & $3.26$ \\
+\bottomrule
+\end{tabular}
+\end{table}

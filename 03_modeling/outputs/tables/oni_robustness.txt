@@ -1,0 +1,73 @@
+ONI ROBUSTNESS
+==============
+
+ONI_chill = mean ONI over May-Aug of Y-1
+
+(a) ONI only  log(y+0.5) ~ ONI_chill
+   R2 (log) = 0.4637
+   beta_ONI = -0.7744 (p=0.0630)
+
+(b) ONI + T_CREC
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  log_y   R-squared:                       0.490
+Model:                            OLS   Adj. R-squared:                  0.286
+Method:                 Least Squares   F-statistic:                     2.399
+Date:                Fri, 17 Apr 2026   Prob (F-statistic):              0.186
+Time:                        16:27:12   Log-Likelihood:                -6.5477
+No. Observations:                   8   AIC:                             19.10
+Df Residuals:                       5   BIC:                             19.33
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+===================================================================================
+                      coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------
+const               0.1350      3.460      0.039      0.970      -8.760       9.030
+ONI_chill          -0.8660      0.406     -2.133      0.086      -1.910       0.178
+Tmean_mean_CREC     0.0820      0.162      0.505      0.635      -0.336       0.500
+==============================================================================
+Omnibus:                        1.612   Durbin-Watson:                   0.985
+Prob(Omnibus):                  0.447   Jarque-Bera (JB):                0.814
+Skew:                          -0.381   Prob(JB):                        0.666
+Kurtosis:                       1.635   Cond. No.                         305.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+   in-sample back-trans R2=-0.0798 RMSE=3.747 MAE=3.188
+   LOYO log R2=-0.4547 raw R2=-3.5615 RMSE=7.702 MAE=5.971
+
+(c) Joint ONI + T_chill + T_CREC
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  log_y   R-squared:                       0.660
+Model:                            OLS   Adj. R-squared:                  0.405
+Method:                 Least Squares   F-statistic:                     2.589
+Date:                Fri, 17 Apr 2026   Prob (F-statistic):              0.190
+Time:                        16:27:12   Log-Likelihood:                -4.9230
+No. Observations:                   8   AIC:                             17.85
+Df Residuals:                       4   BIC:                             18.16
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+====================================================================================
+                       coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------
+const               11.6258      8.709      1.335      0.253     -12.555      35.806
+ONI_chill           -0.1800      0.610     -0.295      0.783      -1.874       1.514
+Tmean_chill_lag1    -0.7005      0.495     -1.416      0.230      -2.074       0.673
+Tmean_mean_CREC      0.0980      0.149      0.659      0.546      -0.315       0.511
+==============================================================================
+Omnibus:                        0.136   Durbin-Watson:                   2.017
+Prob(Omnibus):                  0.934   Jarque-Bera (JB):                0.247
+Skew:                          -0.216   Prob(JB):                        0.884
+Kurtosis:                       2.256   Cond. No.                     1.07e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.07e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+   beta_T_chill p = 0.2298
+   beta_ONI     p = 0.7827

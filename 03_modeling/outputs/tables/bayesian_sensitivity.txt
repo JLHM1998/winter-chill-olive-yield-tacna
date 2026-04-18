@@ -1,0 +1,16 @@
+BAYESIAN SENSITIVITY — weak Normal(0, 1) prior on standardised slopes
+======================================================================
+n = 8; sigma^2 (plug-in) = 0.3277; tau = 1.0
+
+Posterior on STANDARDISED scale:
+  Intercept_std          mean=+1.6965  sd=0.2024  95% CrI=[+1.2998, +2.0932]
+  T_chill_std            mean=-0.6326  sd=0.2157  95% CrI=[-1.0555, -0.2098]
+  T_CREC_std             mean=+0.1306  sd=0.2157  95% CrI=[-0.2922, +0.5535]
+
+Posterior on NATURAL scale (slopes only, back-rescaled):
+  Intercept(nat,approx)  mean=+1.6965  sd=0.2024  95% CrI=[+1.2998, +2.0932]
+  T_chill(nat)           mean=-0.7751  sd=0.2643  95% CrI=[-1.2931, -0.2570]
+  T_CREC(nat)            mean=+0.0774  sd=0.1278  95% CrI=[-0.1732, +0.3280]
+
+beta_T_chill posterior 95% CrI excludes zero: True
+OLS comparison (natural): beta_chill = -0.8164

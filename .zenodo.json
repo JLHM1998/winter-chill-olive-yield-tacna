@@ -1,0 +1,33 @@
+{
+  "title": "Winter-Chill Attribution and CMIP6 Projections of ENSO-Driven Olive Yield Collapse on the Hyper-Arid Peruvian Coast — Reproducibility Archive",
+  "description": "Code, intermediate data, figures and tables supporting the AgriEngineering (MDPI) paper on winter-chill attribution and CMIP6 projections of ENSO-driven olive yield collapse in La Yarada, Tacna, Peru (18°S). Includes in-situ daily meteorology (2015-2025), Sentinel-2 vegetation indices, Dynamic-Model chill-portion preprocessing, the year-level log-OLS yield model (R²_log=0.65, β_chill=-0.82), parcel-year mixed-model, closed-form Bayesian robustness (BF10=15.9), counterfactual attribution of the 2016/2024 failure years, and CMIP6 delta-method projections (SSP1-2.6 / SSP2-4.5 / SSP5-8.5) identifying a chill-collapse threshold at ΔT_winter ≈ +1.25 °C. Parcel-level annual yields are not redistributed due to commercial sensitivity; the aggregated year-level dataset is sufficient to reproduce every number, table and figure in the paper.",
+  "upload_type": "software",
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": [
+    "Olea europaea",
+    "winter chill attribution",
+    "mean chill-window temperature",
+    "counterfactual decomposition",
+    "CMIP6 delta method",
+    "ENSO",
+    "El Niño",
+    "Humboldt Current",
+    "Tacna",
+    "Peru",
+    "Sentinel-2",
+    "Dynamic Model chill portions"
+  ],
+  "creators": [
+    {"name": "Quille-Mamani, Javier", "orcid": "0000-0002-5283-7211", "affiliation": "Geo-Environmental Cartography and Remote Sensing Group (CGAT), Universitat Politècnica de València, Valencia, Spain"},
+    {"name": "Huanuqueño-Murillo, José", "orcid": "0009-0003-8511-4524", "affiliation": "Department of Water Resources, National Agrarian University La Molina, Lima, Peru"},
+    {"name": "Quispe-Tito, David", "orcid": "0000-0003-3325-5512", "affiliation": "Department of Water Resources, National Agrarian University La Molina, Lima, Peru"},
+    {"name": "Huayna-Felipe, German", "orcid": "0000-0002-4518-1023", "affiliation": "Master's Program in Water Resources, Jorge Basadre Grohmann National University, Tacna, Peru"},
+    {"name": "Espinoza-Molina, Jorge", "orcid": "0000-0003-2236-8335", "affiliation": "Department of Architecture, Jorge Basadre Grohmann National University, Tacna, Peru"},
+    {"name": "Acosta-Caipa, Karina", "orcid": "0000-0003-1872-9062", "affiliation": "Department of Architecture, Jorge Basadre Grohmann National University, Tacna, Peru"},
+    {"name": "Pérez-Cubas, Heler Samir", "orcid": "0009-0003-8329-6555", "affiliation": "Department of Hydraulic Engineering and Environment, Universitat Politècnica de València, Valencia, Spain"},
+    {"name": "Ingol-Blanco, Eusebio", "orcid": "0000-0002-0421-399X", "affiliation": "Department of Civil Engineering, New Mexico State University, Las Cruces, NM, USA"},
+    {"name": "Ramos-Fernández, Lia", "orcid": "0000-0003-3946-7188", "affiliation": "Department of Water Resources, National Agrarian University La Molina, Lima, Peru"},
+    {"name": "Pino-Vargas, Edwin", "orcid": "0000-0001-7432-4364", "affiliation": "Department of Civil Engineering, Jorge Basadre Grohmann National University, Tacna, Peru"}
+  ]
+}

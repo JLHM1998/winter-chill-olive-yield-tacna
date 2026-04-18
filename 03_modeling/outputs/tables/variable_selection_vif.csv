@@ -1,0 +1,9 @@
+variable,VIF
+CP_lag1,inf
+CH12_lag1,inf
+Tmean_chill_lag1,inf
+Tmax_mean_FLOR,inf
+Tmean_mean_FLOR,inf
+Tmax_mean_CREC,inf
+Tmean_mean_CREC,inf
+ET0_sum_CREC,inf

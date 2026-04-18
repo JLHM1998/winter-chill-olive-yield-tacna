@@ -1,0 +1,224 @@
+% Figure 3 – Analytical workflow (input version, no preamble)
+% Include via: \resizebox{\textwidth}{!}{\input{figures_final/Figure3_tikz_input.tex}}
+\begin{tikzpicture}[
+  % ── Node styles ──────────────────────────────────────────────
+  inbox/.style={
+    rectangle, rounded corners=4pt, draw=blue!70!black, fill=blue!8,
+    line width=0.9pt, text width=4.0cm, minimum height=1.8cm,
+    align=center, font=\normalsize},
+  procbox/.style={
+    rectangle, rounded corners=4pt, draw=teal!80!black, fill=teal!8,
+    line width=0.9pt, text width=4.0cm, minimum height=1.8cm,
+    align=center, font=\normalsize},
+  modbox/.style={
+    rectangle, rounded corners=4pt, draw=orange!80!black, fill=orange!8,
+    line width=0.9pt, minimum height=1.4cm,
+    align=center, font=\normalsize},
+  valbox/.style={
+    rectangle, rounded corners=4pt, draw=green!60!black, fill=green!8,
+    line width=0.9pt, text width=4.0cm, minimum height=1.8cm,
+    align=center, font=\normalsize},
+  outbox/.style={
+    rectangle, rounded corners=4pt, draw=violet!70!black, fill=violet!6,
+    line width=0.9pt, text width=4.4cm, minimum height=1.8cm,
+    align=center, font=\normalsize},
+  % ── Arrow and line styles ───────────────────────────────────
+  arr/.style={-{Stealth[length=5pt,width=4pt]}, thick, gray!70!black},
+  plainline/.style={thick, gray!70!black},
+  % ── Junction dot ─────────────────────────────────────────────
+  dot/.style={circle, fill=gray!70!black, inner sep=1.8pt},
+  % ── Background group ────────────────────────────────────────
+  gbox/.style={draw=gray!45, dashed, rounded corners=6pt,
+    inner xsep=10pt, inner ysep=8pt, fill=gray!3},
+  glabel/.style={font=\normalsize\bfseries\sffamily, gray!50!black},
+  glabelmask/.style={font=\normalsize\bfseries\sffamily, text=gray!50!black,
+    fill=white, inner xsep=6pt, inner ysep=2pt, rounded corners=2pt},
+]
+
+% ── Column centres (4 columns, evenly spaced) ─────────────────
+\def\colA{0}
+\def\colB{5.4}
+\def\colC{10.8}
+\def\colD{16.2}
+\pgfmathsetmacro{\gridcenter}{(\colA+\colD)/2}
+
+% =====================================================================
+%  ROW 1 — RAW DATA  (y = 0)
+% =====================================================================
+\node[inbox] (in1) at (\colA,0)
+  {\textbf{In-situ daily met}\\
+   $T_{\min}$\,/\,$T_{\max}$\\
+   2015--2025 ($n{=}3388$)};
+
+\node[inbox] (in2) at (\colB,0)
+  {\textbf{Sentinel-2 SR}\\
+   319 obs $\times$ 11 parcels\\
+   8 VIs (NDRE, CIre used)};
+
+\node[inbox] (in3) at (\colC,0)
+  {\textbf{Yield records}\\
+   11 parcels $\times$ 8 yr\\
+   2016--2024 (ex.\,2021)};
+
+\node[inbox] (in4) at (\colD,0)
+  {\textbf{NOAA PSL ONI}\\
+   ENSO state\\
+   1950--2025};
+
+% =====================================================================
+%  ROW 2 — PREPROCESS  (y = -3.6)
+% =====================================================================
+\node[procbox] (pr1) at (\colA,-3.6)
+  {Sinusoidal hourly\\
+   chill models (DM / Utah / CH)\\
+   $\to$ CP / CU / CH$_{12}$};
+
+\node[procbox] (pr2) at (\colB,-3.6)
+  {Phenology-window\\
+   aggregation\\
+   FLOR / CUAJ / CREC};
+
+\node[procbox] (pr3) at (\colC,-3.6)
+  {Parcel-year QA\\
+   + COVID exclusion\\
+   (2021 dropped)};
+
+\node[procbox] (pr4) at (\colD,-3.6)
+  {ENSO overlay\\
+   El Ni\~{n}o 15/16, 23/24\\
+   La Ni\~{n}a 20--22};
+
+% =====================================================================
+%  ROW 3 — FEATURES  (y = -7.6)
+% =====================================================================
+\node[modbox, text width=14.6cm] (feat) at (\gridcenter,-7.6)
+  {\textbf{Year-level feature matrix} ($n{=}8$ calibration years)\\[3pt]
+   $T_{\mathrm{chill},t\text{-}1}$ \;\;$\mid$\;\;
+   $T_{\mathrm{CREC},t}$ \;\;$\mid$\;\;
+   CP$_{t\text{-}1}$ \;\;$\mid$\;\;
+   CH$_{12,\,t\text{-}1}$ \;\;$\mid$\;\;
+   yield \\[2pt]
+   {\small\itshape (NDRE, CIre: parcel-level descriptors only)}};
+
+% =====================================================================
+%  ROW 4 — INFERENCE  (y = -11.6)
+% =====================================================================
+\pgfmathsetmacro{\infA}{\gridcenter - 5.9}
+\pgfmathsetmacro{\infB}{\gridcenter}
+\pgfmathsetmacro{\infC}{\gridcenter + 5.9}
+
+\node[valbox] (val1) at (\infA,-11.6)
+  {\textbf{Primary log-OLS}\\
+   $\log(y{+}0.5) \sim T_{\mathrm{chill}}$\\
+   $+\; T_{\mathrm{CREC}}$};
+
+\node[valbox] (val2) at (\infB,-11.6)
+  {\textbf{Validation}\\
+   LOYO / bootstrap\\
+   permutation test};
+
+\node[valbox] (val3) at (\infC,-11.6)
+  {\textbf{Sensitivity}\\
+   mixed-eff.\ / Bayesian\\
+   leave-out / offset-$c$};
+
+% =====================================================================
+%  ROW 5 — ATTRIBUTION + PROJECTION  (y = -15.4)
+% =====================================================================
+\pgfmathsetmacro{\attA}{\gridcenter - 5.9}
+\pgfmathsetmacro{\attB}{\gridcenter}
+\pgfmathsetmacro{\attC}{\gridcenter + 5.9}
+
+\node[outbox, draw=red!70!black, fill=red!6] (cm1) at (\attA,-15.4)
+  {\textbf{Attribution}\\
+   Counterfactual 2016/2024\\
+   chill vs.\ heat};
+
+\node[outbox] (cm2) at (\attB,-15.4)
+  {\textbf{CMIP6 projections}\\
+   SSP1-2.6 / 2-4.5 / 5-8.5\\
+   2031--2050 / 2051--2070};
+
+\node[outbox] (cm3) at (\attC,-15.4)
+  {\textbf{Risk surface}\\
+   $\Delta T_{\mathrm{winter}}$ sweep 0--3\,$^{\circ}$C\\
+   threshold ${\approx}\,{+}1.25\,^{\circ}$C};
+
+% =====================================================================
+%  ARROWS — Row 1 → Row 2 (vertical, one-to-one)
+% =====================================================================
+\draw[arr] (in1) -- (pr1);
+\draw[arr] (in2) -- (pr2);
+\draw[arr] (in3) -- (pr3);
+\draw[arr] (in4) -- (pr4);
+
+% =====================================================================
+%  ARROWS — Row 2 → Row 3 (fan-in via horizontal bus)
+% =====================================================================
+\coordinate (busL) at (\colA,-5.0);
+\coordinate (busR) at (\colD,-5.0);
+\node[dot] (jin) at (\gridcenter,-5.0) {};
+
+\draw[plainline] (pr1.south) -- (\colA,-5.0);
+\draw[plainline] (pr2.south) -- (\colB,-5.0);
+\draw[plainline] (pr3.south) -- (\colC,-5.0);
+\draw[plainline] (pr4.south) -- (\colD,-5.0);
+\draw[plainline] (busL) -- (busR);
+\draw[arr] (jin) -- (feat.north);
+
+% =====================================================================
+%  ARROWS — Row 3 → Row 4:
+%    Feature matrix feeds ONLY the primary OLS (val1). Validation (val2)
+%    and sensitivity (val3) operate on the fitted model, not on the raw
+%    data, so they receive the flow through val1 via the serial chain
+%    below (primary -> validation -> sensitivity, terminating at val3).
+% =====================================================================
+\node[dot] (jout) at (\gridcenter,-9.2) {};
+\draw[plainline] (feat.south) -- (jout);
+\draw[arr] (jout) -| (val1.north);
+
+% =====================================================================
+%  ARROWS — Row 4 internal (serial assessment chain):
+%    val1 (primary OLS) -> val2 (validation) -> val3 (sensitivity).
+%    Labels are placed above the arrow with a small yshift and in
+%    \footnotesize so they do not touch the adjacent nodes.
+% =====================================================================
+\draw[arr] (val1.east) -- node[midway, above=1pt, font=\footnotesize, gray!50!black]{validate} (val2.west);
+\draw[arr] (val2.east) -- node[midway, above=1pt, font=\footnotesize, gray!50!black]{stress-test} (val3.west);
+
+% =====================================================================
+%  ARROWS — Row 4 → Row 5:
+%    Only the calibrated OLS (val1) feeds the downstream attribution /
+%    projection outputs. A shared bus at y = -13.3 fans out to cm1, cm2, cm3.
+% =====================================================================
+\coordinate (busvL) at (\infA,-13.3);
+\coordinate (busvR) at (\infC,-13.3);
+\node[dot] (jdown) at (\infA,-13.3) {};
+
+\draw[plainline] (val1.south) -- (jdown);
+\draw[plainline] (busvL) -- (busvR);
+\draw[arr] (\infA,-13.3) -- (cm1.north);
+\draw[arr] (\infB,-13.3) -- (cm2.north);
+\draw[arr] (\infC,-13.3) -- (cm3.north);
+
+% =====================================================================
+%  BACKGROUND GROUPS
+% =====================================================================
+\begin{pgfonlayer}{background}
+  \node[gbox, fit=(in1)(in4),
+    label={[glabel]above:Raw Data (2015--2025)}] {};
+  \node[gbox, fit=(pr1)(pr4),
+    label={[glabel]above:Preprocessing}] {};
+  \node[gbox, fit=(feat)] (gFeat) {};
+  \node[gbox, fit=(val1)(val3)] (gInf) {};
+  \node[gbox, fit=(cm1)(cm3)] (gAtt) {};
+\end{pgfonlayer}
+
+% Foreground labels with opaque fill so the incoming arrows are masked
+% where they cross the label (labels inside pgfonlayer{background} are
+% drawn BELOW arrows from the main layer and get visually overwritten).
+\node[glabelmask, anchor=south] at (gFeat.north) {Feature Engineering};
+\node[glabelmask, anchor=south] at (gInf.north)  {Inference};
+\node[glabelmask, anchor=south] at (gAtt.north)  {Attribution \& Projection};
+
+\end{tikzpicture}

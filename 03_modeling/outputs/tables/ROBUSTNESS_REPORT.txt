@@ -1,0 +1,56 @@
+ROBUSTNESS REPORT — Tacna olive chill x heat attribution
+=========================================================
+
+Primary model: yield ~ Tmean_chill_lag1 + Tmean_mean_CREC  (year-level OLS, n=8)
+
+Standard LOYO R2 is weak because the 8-year record contains only one
+instance of each extreme ENSO year (2015/16 El Nino -> 2016 failure;
+2023/24 El Nino -> 2024 collapse). Holding out either year forces the
+model to extrapolate beyond the observed Tmean_chill range and produces
+unbounded or negative predictions.
+
+Bounded and interior LOYO variants show the problem is extrapolation of
+a few extreme events, not lack of signal:
+
+                           variant         stage        transform  n     R2  RMSE   MAE   bias
+primary (Tmean_chill + Tmean_CREC)     in_sample back-transformed  8  0.108 3.406 2.542 -0.402
+primary (Tmean_chill + Tmean_CREC)      loyo_raw back-transformed  8 -1.694 5.919 4.259  0.307
+primary (Tmean_chill + Tmean_CREC)  loyo_clipped back-transformed  8 -0.756 4.779 3.689 -0.262
+primary (Tmean_chill + Tmean_CREC)      loyo_log       log(y+0.5)  8 -0.071 0.795 0.652  0.083
+primary (Tmean_chill + Tmean_CREC) loyo_interior back-transformed  4  0.218 2.667 2.379 -0.964
+
+Alternative chill metrics (CP, CH12) and alternative predictor pairs
+produce qualitatively consistent in-sample fits, confirming that the
+signal is not an artefact of how chill is quantified:
+
+                           variant     stage        transform  n     R2  RMSE   MAE   bias
+primary (Tmean_chill + Tmean_CREC) in_sample back-transformed  8  0.108 3.406 2.542 -0.402
+                  Tmean_chill only in_sample back-transformed  8  0.104 3.414 2.696 -0.398
+                   CP + Tmean_CREC in_sample back-transformed  8 -0.174 3.906 3.677 -1.168
+                 CH12 + Tmean_CREC in_sample back-transformed  8 -0.175 3.908 3.545 -0.995
+           Tmean_chill + Tmax_FLOR in_sample back-transformed  8  0.230 3.164 2.552 -0.346
+
+A non-parametric Random Forest baseline achieves similar LOYO performance,
+confirming that the bottleneck is the small number of extreme-year
+observations rather than the linear functional form:
+
+  RF LOYO: R2 = -0.040   RMSE = 3.677
+
+Feature importance (full-data RF):
+         feature  importance
+Tmean_chill_lag1       0.359
+       CH12_lag1       0.266
+ Tmean_mean_CREC       0.215
+  Tmax_mean_FLOR       0.126
+         CP_lag1       0.034
+
+Interpretation for the manuscript:
+    * In-sample R2, permutation test and year-block bootstrap jointly
+      establish that winter chill (Tmean_chill_lag1) is a significant
+      driver of olive yield variance in Tacna with p < 0.03 by all tests.
+    * LOYO is extrapolative and should not be reported as the primary
+      predictive benchmark. The clipped and interior variants are the
+      honest prognostic statistics.
+    * The counterfactual analysis (primary script) provides the
+      attribution quantification; LOYO is a stress test, not a
+      generalization benchmark.

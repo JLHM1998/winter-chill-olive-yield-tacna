@@ -1,0 +1,54 @@
+PRIMARY MODEL SUMMARY — Chill x Heat attribution of Tacna olive yield
+=========================================================================
+
+Target: Remote Sensing (MDPI), Q1.
+Unit of analysis: year (n = 8).
+Predictors:
+    X1 = Tmean_chill_lag1  (May-Aug of Y-1, chill-season mean air temperature)
+    X2 = Tmean_mean_CREC   (Jan-Mar of Y, fruit-growth mean air temperature)
+Year-level correlation r(X1, X2) = 0.409  (orthogonal)
+
+In-sample OLS:
+  R2      = 0.4873
+  adj R2  = 0.2822
+  F       = 2.38  (df = 2, 5)
+  p       = 0.1882
+
+Coefficients:
+            term  estimate  std_error       t  p_value  ci_low  ci_high
+       Intercept   59.5810    24.8156  2.4010   0.0615 -4.2095 123.3716
+Tmean_chill_lag1   -3.0210     1.5503 -1.9486   0.1089 -7.0062   0.9642
+ Tmean_mean_CREC   -0.0709     0.7499 -0.0946   0.9283 -1.9987   1.8569
+
+Standardized coefficients:
+  Tmean_chill_lag1 beta* = -0.684
+  Tmean_mean_CREC  beta* = -0.033
+
+Leave-One-Year-Out CV:
+  pooled R2  = -0.578
+  RMSE       = 4.530 t/ha
+  MAE        = 3.634 t/ha
+  bias       = +0.366
+
+Year-block bootstrap 95% CI (n_boot = 4998):
+                  ci_low_boot  median_boot  ci_high_boot
+Intercept            -29.5295      54.7659      112.5559
+Tmean_chill_lag1      -5.7455      -2.9381        4.2097
+Tmean_mean_CREC       -1.6758      -0.2829        2.4164
+
+Bootstrap two-sided p-values:
+  Tmean_chill_lag1:  p = 0.2145
+  Tmean_mean_CREC:  p = 0.7487
+
+Permutation test (n = 5000):
+  observed R2 = 0.487
+  null mean   = 0.284
+  p (one-sided) = 0.1804
+
+Panel sensitivity (parcel random intercept):
+  ICC(parcel) = 0.000   (small -> climate-dominated variance)
+
+Counterfactual attribution (full climate restored):
+ year  obs_yield  cf_median  cf_ci_low  cf_ci_high  delta_median
+ 2016      1.603      7.566      5.055      10.637         5.964
+ 2024      0.684      7.566      5.055      10.637         6.883

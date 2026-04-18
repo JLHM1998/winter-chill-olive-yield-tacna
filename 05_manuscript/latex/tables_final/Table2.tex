@@ -1,0 +1,23 @@
+% Table 2 — Primary log-OLS coefficients
+\begin{table}[H]
+\caption{Primary attribution model coefficients. Model: $\log(y_{t}+0.5) = \beta_{0} + \beta_{1}\,T_{\text{chill},t-1} + \beta_{2}\,T_{\text{CREC},t} + \varepsilon_{t}$, fitted at the year level ($n=8$). 95\,\% CIs and bootstrap two-sided $p$-values come from a 5000-iteration year-block bootstrap. Predictor collinearity and permutation-test details are reported in Section~\ref{sec:results_primary}.\label{tab:primary_coef}}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Term} & \textbf{Estimate} & \textbf{SE} & \textbf{$t$} & \textbf{$p$ (OLS)} & \textbf{95\,\% CI} & \textbf{$p$ (boot)} \\
+\midrule
+Intercept                & $+13.768$ & $4.350$ & $+3.165$ & $0.0249$         & $[2.587,\,24.949]$  & ---     \\
+$T_{\text{chill},t-1}$   & $-0.816$  & $0.272$ & $-3.004$ & $\mathbf{0.030}$ & $[-1.515,\,-0.118]$ & $0.171$ \\
+$T_{\text{CREC},t}$      & $+0.089$  & $0.131$ & $+0.675$ & $0.5294$         & $[-0.249,\,+0.427]$ & $0.573$ \\
+\bottomrule
+\end{tabular}
+
+\vspace{4pt}
+\footnotesize
+\noindent\textit{Goodness of fit (log space):} $R^{2}=0.653$; adj.\ $R^{2}=0.514$; $F(2,5)=4.70$; $p=0.071$. \\
+\textit{Back-transformed (raw t~ha$^{-1}$):} $R^{2}=0.108$; RMSE $=3.41$; MAE $=2.54$. \\
+\textit{LOYO cross-validation:} $R^{2}_{\log}=-0.07$; $R^{2}_{\text{back}}=-1.69$; RMSE $=5.92$~t~ha$^{-1}$. \\
+\textit{Single-predictor sensitivity} ($T_{\text{chill},t-1}$ only): $R^{2}_{\log}=0.621$; $F(1,6)=9.83$; $p=0.020$; $\beta=-0.741\pm0.236$.
+\end{table}

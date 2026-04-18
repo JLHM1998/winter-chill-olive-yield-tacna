@@ -1,0 +1,85 @@
+cff-version: 1.2.0
+message: "If you use this archive, please cite both the AgriEngineering paper and the Zenodo archive."
+title: "Winter-Chill Attribution and CMIP6 Projections of ENSO-Driven Olive Yield Collapse on the Hyper-Arid Peruvian Coast — Reproducibility Archive"
+type: software
+authors:
+  - family-names: Quille-Mamani
+    given-names: Javier
+    orcid: "https://orcid.org/0000-0002-5283-7211"
+    affiliation: "Universitat Politècnica de València, Spain"
+  - family-names: Huanuqueño-Murillo
+    given-names: José
+    orcid: "https://orcid.org/0009-0003-8511-4524"
+    affiliation: "National Agrarian University La Molina, Lima, Peru"
+  - family-names: Quispe-Tito
+    given-names: David
+    orcid: "https://orcid.org/0000-0003-3325-5512"
+    affiliation: "National Agrarian University La Molina, Lima, Peru"
+  - family-names: Huayna-Felipe
+    given-names: German
+    orcid: "https://orcid.org/0000-0002-4518-1023"
+    affiliation: "Jorge Basadre Grohmann National University, Tacna, Peru"
+  - family-names: Espinoza-Molina
+    given-names: Jorge
+    orcid: "https://orcid.org/0000-0003-2236-8335"
+    affiliation: "Jorge Basadre Grohmann National University, Tacna, Peru"
+  - family-names: Acosta-Caipa
+    given-names: Karina
+    orcid: "https://orcid.org/0000-0003-1872-9062"
+    affiliation: "Jorge Basadre Grohmann National University, Tacna, Peru"
+  - family-names: Pérez-Cubas
+    given-names: Heler Samir
+    orcid: "https://orcid.org/0009-0003-8329-6555"
+    affiliation: "Universitat Politècnica de València, Spain"
+  - family-names: Ingol-Blanco
+    given-names: Eusebio
+    orcid: "https://orcid.org/0000-0002-0421-399X"
+    affiliation: "New Mexico State University, Las Cruces, NM, USA"
+  - family-names: Ramos-Fernández
+    given-names: Lia
+    orcid: "https://orcid.org/0000-0003-3946-7188"
+    affiliation: "National Agrarian University La Molina, Lima, Peru"
+  - family-names: Pino-Vargas
+    given-names: Edwin
+    orcid: "https://orcid.org/0000-0001-7432-4364"
+    affiliation: "Jorge Basadre Grohmann National University, Tacna, Peru"
+version: "1.0.0"
+date-released: "2026-04-18"
+license: MIT
+repository-code: "https://github.com/"
+keywords:
+  - Olea europaea
+  - winter chill attribution
+  - mean chill-window temperature
+  - counterfactual decomposition
+  - CMIP6 delta method
+  - ENSO
+  - Humboldt Current
+  - Tacna
+  - Peru
+preferred-citation:
+  type: article
+  title: "Winter-Chill Attribution and CMIP6 Projections of ENSO-Driven Olive Yield Collapse on the Hyper-Arid Peruvian Coast"
+  journal: "AgriEngineering"
+  year: 2026
+  authors:
+    - family-names: Quille-Mamani
+      given-names: Javier
+    - family-names: Huanuqueño-Murillo
+      given-names: José
+    - family-names: Quispe-Tito
+      given-names: David
+    - family-names: Huayna-Felipe
+      given-names: German
+    - family-names: Espinoza-Molina
+      given-names: Jorge
+    - family-names: Acosta-Caipa
+      given-names: Karina
+    - family-names: Pérez-Cubas
+      given-names: Heler Samir
+    - family-names: Ingol-Blanco
+      given-names: Eusebio
+    - family-names: Ramos-Fernández
+      given-names: Lia
+    - family-names: Pino-Vargas
+      given-names: Edwin

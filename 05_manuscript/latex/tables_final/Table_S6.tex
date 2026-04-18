@@ -1,0 +1,23 @@
+% Table S6 — Leave-out sensitivity of the primary log-OLS model
+% Values taken verbatim from sensitivity_leave_out.csv (script 07b_sensitivity_leave_out.py)
+\begin{table}[H]
+\caption{Leave-out sensitivity of the primary log-OLS model
+$\log(y+0.5)\sim T_{\text{chill},t-1}+T_{\text{CREC},t}$, refit on the full
+eight-year sample, with 2024 removed, and with both warm-tail years
+(2016, 2024) removed. Removing 2024 alone halves the chill slope
+($p=0.37$); removing both warm-tail anchors collapses the chill-window
+range to $\sim$1.5\,$^{\circ}$C and flips the fitted slope
+($+0.32$, $p=0.44$), quantifying how much attribution skill is carried
+by the two extreme years.\label{tab:sens_leave_out}}
+\centering
+\footnotesize
+\begin{tabular}{lccccccc}
+\toprule
+\textbf{Variant} & \textbf{$n$} & \textbf{$\beta_{T_{\text{chill}}}$ (SE)} & \textbf{$p_{\text{chill}}$} & \textbf{$\beta_{T_{\text{CREC}}}$} & \textbf{$p_{\text{CREC}}$} & \textbf{$R^{2}_{\log}$} & \textbf{$R^{2}_{\text{raw}}$} \\
+\midrule
+Full (2016--2024, ex 2021)         & 8 & $-0.816\,(0.272)$ & $0.0299$ & $+0.089$ & $0.529$ & $0.653$ & $0.108$ \\
+Leave 2024                          & 7 & $-0.433\,(0.428)$ & $0.3681$ & $-0.033$ & $0.853$ & $0.396$ & $0.091$ \\
+Leave \{2016, 2024\}                & 6 & $+0.322\,(0.360)$ & $0.4374$ & $-0.107$ & $0.368$ & $0.284$ & $0.341$ \\
+\bottomrule
+\end{tabular}
+\end{table}

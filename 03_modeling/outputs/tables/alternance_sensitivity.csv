@@ -1,0 +1,9 @@
+model,term,estimate,std_error,p_value
+year_OLS_primary,Tmean_chill_lag1,-0.8164,0.2717,0.0299
+year_OLS_primary,Tmean_mean_CREC,0.0888,0.1314,0.5294
+year_OLS_with_shareON,Tmean_chill_lag1,-0.6005,0.1838,0.0309
+year_OLS_with_shareON,Tmean_mean_CREC,0.1085,0.082,0.2563
+year_OLS_with_shareON,share_ON,0.8821,0.2952,0.0404
+parcel_mixedlm,Tmean_chill_lag1,-0.6175,0.0101,0.0
+parcel_mixedlm,Tmean_mean_CREC,0.1065,0.0079,0.0
+parcel_mixedlm,alt_ON,0.8057,0.0265,0.0

@@ -1,0 +1,2 @@
+b_chill_ols,se_chill_ols,p_two_ols,p_one_ols,p_perm_two,p_perm_one,post_mean_chill_nat,post_sd_chill_nat,p_beta_lt0,BF10_two_sided,BF_one_sided_neg,b_chill_mm_std,se_chill_mm_std,z_mm,p_mm_two,p_mm_one,icc_parcel,n_parcelyears,n_parcels,n_required_seasons
+-0.8164082384616606,0.27173213249425443,0.02994545011640153,0.014972725058200765,0.0718,0.0359,-0.7750590566660349,0.2642912917459748,0.9983192842637674,15.89977036632017,593.9846118782272,-2.48,0.319,-7.775,7.5e-15,3.75e-15,0.0,88,11,4

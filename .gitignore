@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+.DS_Store
+# Commercially sensitive — never commit
+00_raw_data/yield_parcels_2016_2024.csv

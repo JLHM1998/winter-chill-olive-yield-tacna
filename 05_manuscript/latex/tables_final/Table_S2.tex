@@ -1,0 +1,28 @@
+% Table S2 — Year-level Pearson correlations between yield and candidate predictors
+% VALUES VERIFIED against year_level_correlations.csv (source of truth)
+\begin{table}[H]
+\caption{Year-level Pearson correlations between mean olive yield and candidate
+climate predictors ($n=8$ years). $T_{\text{chill},t-1}$ ($r=-0.697$) is the
+strongest single predictor; $T_{\text{CREC},t}$ was selected as the heat-side
+predictor for its low collinearity with $T_{\text{chill},t-1}$ ($r=0.409$,
+VIF\,$<2$) and its clean physiological decomposition. Threshold-based chill
+counts (CP, CH$_{12}$) are weaker because they saturate at zero in the warm tail.\label{tab:year_corr}}
+\centering
+\small
+\begin{tabular}{lcc}
+\toprule
+\textbf{Predictor} & \textbf{Pearson $r$ vs yield} & \textbf{Note} \\
+\midrule
+$T_{\text{chill},t-1}$ (May--Aug, $^\circ$C)     & $\mathbf{-0.697}$ & primary (chill side) \\
+$T_{\max,\text{FLOR}}$ ($^\circ$C)               & $-0.492$ & flowering $T_{\max}$ \\
+CH$_{12,t-1}$ (h)                                & $+0.404$ & threshold chill, h$<12\,^\circ$C \\
+$T_{\text{mean},\text{FLOR}}$ ($^\circ$C)        & $-0.381$ & flowering window \\
+$T_{\max,\text{CREC}}$ ($^\circ$C)               & $-0.375$ & fruit growth $T_{\max}$ \\
+$T_{\text{CREC},t}$ (Jan--Mar, $^\circ$C)        & $\mathbf{-0.313}$ & primary (heat side) \\
+CP$_{t-1}$ (Dynamic Model)                       & $+0.307$ & saturated at 0 in 5/8 years \\
+ET$_{0,\text{CREC}}$ (mm)                        & $-0.178$ & FAO~56 reference ET, fruit growth \\
+\midrule
+\multicolumn{3}{l}{\textit{Cross-correlation $T_{\text{chill},t-1}\times T_{\text{CREC},t}=+0.409$ (moderate; VIF\,$<2$)}} \\
+\bottomrule
+\end{tabular}
+\end{table}
